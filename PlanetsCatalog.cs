@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace SolarSystem
 {
     internal class PlanetsCatalog
@@ -17,7 +11,7 @@ namespace SolarSystem
             Planets = new List<Planet>();
         }
 
-        public PlanetsCatalog(Planet planet1,Planet planet2, Planet planet3)
+        public PlanetsCatalog(Planet planet1, Planet planet2, Planet planet3)
         {
             Planets = new List<Planet>();
             Planets.Add(planet1);
@@ -26,24 +20,24 @@ namespace SolarSystem
         }
 
         public (string, int, int) GetPlanet(string name)
-        { 
-            if(count == 3)
+        {
+            if (count == 3)
             {
                 count = 1;
-                return ("Вы спрашиваете слишком часто.", 0,0);
+                return ("Вы спрашиваете слишком часто.", 0, 0);
             }
 
             foreach (var planet in Planets)
             {
-                if(planet.Name == name)
+                if (planet.Name == name)
                 {
                     count++;
-                    return (null,planet.Number, planet.EquatorLenth);
+                    return (null, planet.Number, planet.EquatorLenth);
                 }
             }
 
             count++;
-            return ("Не удалось найти планету.",0,0);
-        }        
+            return ("Не удалось найти планету.", 0, 0);
+        }
     }
 }
